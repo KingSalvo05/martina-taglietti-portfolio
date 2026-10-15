@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menù - L'Essenza | Fine Dining</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #FAFAFA; --text: #111; --accent: #8C7A5E; --muted: #777; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Jost', sans-serif; }
+        body { background: var(--bg); color: var(--text); padding-bottom: 50px; }
+        header { text-align: center; padding: 4rem 1rem 3rem; }
+        .stars { color: var(--accent); font-size: 1.2rem; margin-bottom: 10px; letter-spacing: 5px; }
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 400; letter-spacing: 3px; margin-bottom: 5px; text-transform: uppercase;}
+        .subtitle { font-size: 0.8rem; letter-spacing: 4px; color: var(--muted); text-transform: uppercase; }
+        
+        .menu-container { max-width: 600px; margin: 0 auto; padding: 0 20px; }
+        .course-title { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; text-align: center; margin: 3rem 0 2rem; color: var(--accent); font-style: italic; border-bottom: 1px solid #E0E0E0; padding-bottom: 10px;}
+        
+        .dish { margin-bottom: 2rem; text-align: center; }
+        .dish-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 5px;}
+        .dish-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 8px; font-weight: 300; max-width: 80%; margin-left: auto; margin-right: auto;}
+        .dish-price { font-size: 1rem; color: var(--text); font-weight: 400; }
+        
+        .wine-pairing { font-size: 0.75rem; color: var(--accent); margin-top: 5px; font-style: italic; }
+        
+        .degustazione { border: 1px solid var(--accent); padding: 2rem; margin: 2rem 0; text-align: center; background: white;}
+        .degustazione h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; margin-bottom: 1rem; color: var(--accent);}
+        .degustazione p { font-size: 0.9rem; line-height: 1.8; margin-bottom: 1rem;}
+        .degustazione-price { font-size: 1.2rem; font-weight: bold; margin-top: 1rem;}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="stars">★</div>
+        <h1>L'Essenza</h1>
+        <p class="subtitle">Ristorante Gastronomico</p>
+    </header>
+
+    <div class="menu-container">
+        
+        <div class="degustazione">
+            <h2>Percorso "I Sensi"</h2>
+            <p>Un viaggio in 7 portate attraverso i ricordi d'infanzia dello Chef, reinterpretati con tecniche d'avanguardia e materie prime del territorio.</p>
+            <div class="degustazione-price">€ 140 p.p.</div>
+            <div class="wine-pairing">Wine Pairing (5 Calici) - € 70</div>
+        </div>
+
+        <h2 class="course-title">Antipasti</h2>
+        
+        <div class="dish">
+            <div class="dish-name">Il Bosco Invernale</div>
+            <div class="dish-desc">Consistenze di funghi porcini, terra di cacao amaro, spuma di patate affumicate al legno di melo.</div>
+            <div class="dish-price">€ 28</div>
+        </div>
+
+        <div class="dish">
+            <div class="dish-name">Crudo di Gambero Rosso</div>
+            <div class="dish-desc">Gambero rosso di Mazara, gel di yuzu, caviale Oscietra e maionese al plancton.</div>
+            <div class="dish-price">€ 35</div>
+            <div class="wine-pairing">In abbinamento: Franciacorta Satèn DOCG</div>
+        </div>
+
+        <h2 class="course-title">Primi Piatti</h2>
+        
+        <div class="dish">
+            <div class="dish-name">Risotto Acquerello Riserva</div>
+            <div class="dish-desc">Mantecato al burro acido, zafferano in pistilli, liquirizia calabra e foglia d'oro 24k.</div>
+            <div class="dish-price">€ 32</div>
+        </div>
+
+        <div class="dish">
+            <div class="dish-name">Bottoni Ripieni</div>
+            <div class="dish-desc">Pasta fresca ripiena di genovese di manzo, spuma di provolone del Monaco, tartufo nero pregiato.</div>
+            <div class="dish-price">€ 30</div>
+        </div>
+
+    </div>
+</body>
+</html>

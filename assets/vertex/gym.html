@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IronForge Gym | Palestra e Fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600;700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --neon: #00ff88; --dark: #0a0a0a; --gray: #1a1a1a; --white: #fff; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; color: var(--white); }
+        body { background: var(--dark); }
+        nav { display: flex; justify-content: space-between; padding: 20px 5%; background: var(--gray); align-items: center; border-bottom: 2px solid var(--neon); }
+        .logo { font-family: 'Teko', sans-serif; font-size: 2.5rem; color: var(--white); text-transform: uppercase; line-height: 1;}
+        .logo span { color: var(--neon); }
+        .hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+        .hero h1 { font-family: 'Teko', sans-serif; font-size: 6rem; text-transform: uppercase; margin-bottom: 10px; line-height: 0.9;}
+        .hero h1 span { color: var(--neon); }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; letter-spacing: 2px; }
+        .btn { background: var(--neon); color: var(--dark); padding: 15px 40px; font-size: 1.2rem; font-weight: 900; text-transform: uppercase; text-decoration: none; transition: 0.3s; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); display: inline-block;}
+        .btn:hover { background: var(--white); transform: scale(1.05); }
+        .classes { padding: 5rem 5%; text-align: center; }
+        .classes h2 { font-family: 'Teko', sans-serif; font-size: 4rem; color: var(--neon); margin-bottom: 2rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: var(--gray); padding: 30px; border: 1px solid #333; transition: 0.3s; }
+        .card:hover { border-color: var(--neon); transform: translateY(-10px); }
+        .card h3 { font-family: 'Teko', sans-serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .card p { color: #aaa; line-height: 1.6; }
+        footer { padding: 3rem 5%; text-align: center; background: #000; border-top: 1px solid #222; margin-top: 5rem;}
+        footer span { color: var(--neon); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">IRON<span>FORGE</span></div>
+        <a href="#" class="btn" style="padding: 10px 20px; font-size: 1rem;">Iscriviti Ora</a>
+    </nav>
+    <header class="hero">
+        <div>
+            <h1>FORGIA IL TUO <span>FISICO</span></h1>
+            <p>La palestra per chi non cerca scuse. Attrezzatura Hammer Strength e pesi liberi.</p>
+            <a href="#corsi" class="btn">Inizia l'Allenamento</a>
+        </div>
+    </header>
+    <section class="classes" id="corsi">
+        <h2>I NOSTRI CORSI</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>POWERLIFTING</h3>
+                <p>Pedane professionali, bilancieri olimpionici calibrati. Per chi vuole superare i propri limiti di forza.</p>
+            </div>
+            <div class="card">
+                <h3>CROSS-TRAINING</h3>
+                <p>Allenamenti ad alta intensità. Gabbie, anelli, kettlebell e corde navali per un condizionamento totale.</p>
+            </div>
+            <div class="card">
+                <h3>BODYBUILDING</h3>
+                <p>Oltre 50 macchinari isotonici di ultima generazione per l'isolamento muscolare perfetto e l'ipertrofia.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h2>IRON<span>FORGE</span> GYM</h2>
+        <p>Aperti 24/7. Non ci fermiamo mai.</p>
+    </footer>
+</body>
+</html>

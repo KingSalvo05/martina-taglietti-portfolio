@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menù - Sakura Sushi Experience</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #faf8f5;
+            --text-color: #333;
+            --red: #d32f2f;
+            --gray: #e0e0e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Intestazione Minimalista */
+        header {
+            text-align: center;
+            padding: 3rem 1rem 2rem;
+            background-color: white;
+            border-bottom: 2px solid var(--red);
+        }
+
+        header h1 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2.2rem;
+            color: var(--text-color);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        header h1 span {
+            color: var(--red);
+        }
+
+        header p {
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Hero Image - Cibo */
+        .hero-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Barra Categorie */
+        .categories {
+            display: flex;
+            overflow-x: auto;
+            padding: 1rem;
+            background-color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            scrollbar-width: none; 
+            -ms-overflow-style: none;
+        }
+        .categories::-webkit-scrollbar {
+            display: none;
+        }
+
+        .cat-btn {
+            background: #f0f0f0;
+            color: #555;
+            padding: 8px 15px;
+            margin-right: 10px;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            font-weight: bold;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .cat-btn.active, .cat-btn:hover {
+            background-color: var(--red);
+            color: white;
+        }
+
+        /* Griglia Menù (Stile Ristorante Moderno) */
+        .menu-container {
+            padding: 2rem 1rem 5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--text-color);
+            font-size: 1.6rem;
+            margin: 2rem 0 1rem;
+            border-left: 4px solid var(--red);
+            padding-left: 10px;
+        }
+
+        /* Card Articolo con Immagine (Ideale per Sushi) */
+        .item-card {
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            display: flex;
+            align-items: center;
+        }
+
+        .item-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            object-fit: cover;
+            margin-right: 15px;
+            background-color: #eee;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+        }
+
+        .item-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .item-price {
+            font-weight: 700;
+            color: var(--red);
+            font-size: 1.1rem;
+        }
+
+        .item-desc {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* Simboli (Piccante, Veg, ecc) */
+        .icon {
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sakura <span>桜</span></h1>
+        <p>JAPANESE EXPERIENCE</p>
+    </header>
+
+    <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sushi Assortito" class="hero-img">
+
+    <!-- Navigazione Categorie Ottimizzata per Swipe -->
+    <div class="categories">
+        <a href="#antipasti" class="cat-btn active">Antipasti</a>
+        <a href="#uramaki" class="cat-btn">Uramaki</a>
+        <a href="#nigiri" class="cat-btn">Nigiri & Sashimi</a>
+        <a href="#caldi" class="cat-btn">Piatti Caldi</a>
+    </div>
+
+    <div class="menu-container">
+
+        <!-- Categoria 1 -->
+        <h2 id="antipasti" class="section-title">Antipasti</h2>
+        
+        <div class="item-card">
+            <div class="item-details">
+                <div class="item-header">
+                    <span class="item-name">Edamame <span class="icon">🌱</span></span>
+                    <span class="item-price">€ 4</span>
+                </div>
+                <p class="item-desc">Fagioli di soia cotti al vapore con un pizzico di sale marino.</p>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-details">
+                <div class="item-header">
+                    <span class="item-name">Gyoza di Gamberi</span>
+                    <span class="item-price">€ 6</span>
+                </div>
+                <p class="item-desc">Ravioli ripieni di gamberi e verdure, cotti alla piastra (4 pezzi).</p>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-details">
+                <div class="item-header">
+                    <span class="item-name">Tartare Sake <span class="icon">🌶️</span></span>
+                    <span class="item-price">€ 12</span>
+                </div>
+                <p class="item-desc">Tartare di salmone fresco con avocado, uova di quaglia e salsa ponzu piccante.</p>
+            </div>
+        </div>
+
+        <!-- Categoria 2 -->
+        <h2 id="uramaki" class="section-title">Uramaki (8 pz)</h2>
+        
+        <div class="item-card">
+            <div class="item-details">
+                <div class="item-header">
+                    <span class="item-name">Dragon Roll</span>
+                    <span class="item-price">€ 15</span>
+                </div>
+                <p class="item-desc">Gambero in tempura, maionese, coperto con fette di avocado, anguilla e salsa teriyaki.</p>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-details">
+                <div class="item-header">
+                    <span class="item-name">Spicy Tuna Roll <span class="icon">🌶️</span></span>
+                    <span class="item-price">€ 14</span>
+                </div>
+                <p class="item-desc">Tonno piccante, tartare di tonno all'esterno, spicy mayo, scaglie di tempura.</p>
+            </div>
+        </div>
+        
+        <div class="item-card">
+            <div class="item-details">
+                <div class="item-header">
+                    <span class="item-name">Philadelphia Roll</span>
+                    <span class="item-price">€ 12</span>
+                </div>
+                <p class="item-desc">Salmone crudo, avocado, crema di formaggio Philadelphia, sesamo.</p>
+            </div>
+        </div>
+
+        <!-- Categoria 3 -->
+        <h2 id="nigiri" class="section-title">Nigiri (2 pz) & Sashimi</h2>
+        
+        <div class="item-card">
+            <div class="item-details">
+                <div class="item-header">
+                    <span class="item-name">Nigiri Sake (Salmone)</span>
+                    <span class="item-price">€ 4</span>
+                </div>
+                <p class="item-desc">Riso pressato a mano coperto con fettina di salmone crudo.</p>
+            </div>
+        </div>
+
+        <div class="item-card">
+            <div class="item-details">
+                <div class="item-header">
+                    <span class="item-name">Sashimi Mix (12 pz)</span>
+                    <span class="item-price">€ 18</span>
+                </div>
+                <p class="item-desc">Selezione del nostro chef: 4 Salmone, 4 Tonno, 4 Branzino.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        const btns = document.querySelectorAll('.cat-btn');
+        btns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                btns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

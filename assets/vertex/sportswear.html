@@ -1,0 +1,2276 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AEROFIT™ | Your Team. Your Identity. — Custom Sportswear &amp; Teamwear</title>
+    <meta name="description" content="AeroFit Custom Sportswear: divise sportive sartoriali, completi da gara e teamwear ingegnerizzato ad alte prestazioni. Personalizza maglia, colori, nomi e numeri in tempo reale.">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&family=Black+Ops+One&family=Teko:wght@600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #CCFF00;          /* Volt Lime atletico */
+            --primary-glow: rgba(204, 255, 0, 0.35);
+            --primary-dark: #A3CC00;
+            --dark-900: #07090E;         /* Nero profondo */
+            --dark-800: #0E121B;         /* Antracite scuro */
+            --dark-700: #161D2B;         /* Slate tech */
+            --dark-600: #1E2738;
+            --white: #FFFFFF;
+            --light-bg: #F8FAFC;        /* Sfondo chiaro per alternanza editoriale */
+            --light-card: #FFFFFF;
+            --light-text: #0F172A;
+            --light-muted: #64748B;
+            --text-main: #F1F5F9;
+            --text-muted: #94A3B8;
+            --border-dark: rgba(255, 255, 255, 0.1);
+            --border-glow: rgba(204, 255, 0, 0.3);
+            --border-light: #E2E8F0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--dark-900);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, .outfit {
+            font-family: 'Outfit', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .bebas {
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* --- TOP RUNNING TICKER BANNER --- */
+        .top-ticker {
+            background: #000000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 8px 5%;
+            font-size: 0.76rem;
+            color: #94A3B8;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .top-ticker span.highlight {
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .portfolio-back-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #CBD5E1;
+            text-decoration: none;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.06);
+            transition: all 0.25s ease;
+        }
+        .portfolio-back-pill:hover {
+            color: var(--primary);
+            background: rgba(204, 255, 0, 0.12);
+        }
+
+        /* --- NAVBAR MODERNA ATHLETIC --- */
+        nav {
+            background: rgba(14, 18, 27, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 6%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-dark);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.85rem;
+            font-weight: 900;
+            color: #FFFFFF;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+        }
+        .logo-text span {
+            color: var(--primary);
+        }
+        .logo-badge {
+            background: rgba(204, 255, 0, 0.12);
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(204, 255, 0, 0.3);
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.2rem;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: color 0.25s ease;
+        }
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        .btn-nav-custom {
+            background: var(--primary);
+            color: #07090E;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.92rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.25s ease;
+            box-shadow: 0 0 20px var(--primary-glow);
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-nav-custom:hover {
+            background: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.4);
+        }
+
+        .btn-cart-nav {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+            padding: 10px 18px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 0.88rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.25s ease;
+            position: relative;
+        }
+        .btn-cart-nav:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+        .cart-pill {
+            background: var(--primary);
+            color: #07090E;
+            font-size: 0.75rem;
+            font-weight: 900;
+            padding: 2px 7px;
+            border-radius: 20px;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            color: #FFFFFF;
+            cursor: pointer;
+        }
+
+        /* --- 1. HERO INIZIALE --- */
+        .hero-athletic {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            padding: 4rem 6%;
+            background: 
+                linear-gradient(90deg, rgba(7, 9, 14, 0.96) 0%, rgba(7, 9, 14, 0.85) 45%, rgba(7, 9, 14, 0.3) 100%),
+                url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=85') center right/cover no-repeat;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .hero-grid-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(204, 255, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(204, 255, 0, 0.04) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+        .hero-content {
+            max-width: 780px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(204, 255, 0, 0.1);
+            border: 1px solid rgba(204, 255, 0, 0.3);
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.82rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.8rem;
+        }
+        .hero-tag-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 10px var(--primary);
+            animation: pulse 1.6s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(0.8); }
+        }
+
+        .hero-content h1 {
+            font-size: clamp(3rem, 6.8vw, 6.2rem);
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -2px;
+            color: #FFFFFF;
+            margin-bottom: 1.6rem;
+        }
+        .hero-content h1 span.lime {
+            color: var(--primary);
+            text-shadow: 0 0 35px var(--primary-glow);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            color: #94A3B8;
+            line-height: 1.65;
+            margin-bottom: 2.8rem;
+            max-width: 650px;
+        }
+
+        .hero-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 3.5rem;
+        }
+        .btn-hero-primary {
+            background: var(--primary);
+            color: #07090E;
+            padding: 18px 40px;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px var(--primary-glow);
+            border: none;
+            cursor: pointer;
+        }
+        .btn-hero-primary:hover {
+            background: #FFFFFF;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.4);
+        }
+        .btn-hero-secondary {
+            background: transparent;
+            color: #FFFFFF;
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            padding: 16px 34px;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+        .btn-hero-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(204, 255, 0, 0.05);
+        }
+
+        .hero-specs-strip {
+            display: flex;
+            gap: 2.8rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+            flex-wrap: wrap;
+        }
+        .hero-spec-item {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .hero-spec-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #FFFFFF;
+        }
+        .hero-spec-val span {
+            color: var(--primary);
+        }
+        .hero-spec-lbl {
+            font-size: 0.78rem;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* --- 2. COLLEZIONE PRODOTTI --- */
+        .collection-section {
+            padding: 7rem 6%;
+            background: var(--dark-800);
+            position: relative;
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .section-header-wrap {
+            max-width: 1350px;
+            margin: 0 auto 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        .section-tag-inline {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .section-header-wrap h2 {
+            font-size: clamp(2.3rem, 4.2vw, 3.6rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.05;
+        }
+        .section-header-desc {
+            max-width: 500px;
+            color: var(--text-muted);
+            font-size: 1.02rem;
+            line-height: 1.6;
+        }
+
+        .products-showcase-grid {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+        }
+        .product-card-pro {
+            background: var(--dark-700);
+            border: 1px solid var(--border-dark);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: all 0.35s ease;
+            position: relative;
+        }
+        .product-card-pro:hover {
+            transform: translateY(-8px);
+            border-color: var(--border-glow);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(204, 255, 0, 0.15);
+        }
+        .product-img-box {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: #090D15;
+            overflow: hidden;
+            position: relative;
+        }
+        .product-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+            filter: contrast(1.05) brightness(0.95);
+        }
+        .product-card-pro:hover .product-img-box img {
+            transform: scale(1.06);
+        }
+        .product-badge-tech {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(7, 9, 14, 0.85);
+            border: 1px solid rgba(204, 255, 0, 0.4);
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(8px);
+        }
+        .product-badge-flag {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .product-content-box {
+            padding: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+        .product-category {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: #64748B;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.4rem;
+        }
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+        .product-specs-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-bottom: 1.4rem;
+        }
+        .product-specs-list li {
+            font-size: 0.82rem;
+            color: #94A3B8;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .product-specs-list li span.dot {
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--primary);
+        }
+
+        .product-footer-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .product-price-box {
+            display: flex;
+            flex-direction: column;
+        }
+        .product-price-lbl {
+            font-size: 0.68rem;
+            color: #64748B;
+            text-transform: uppercase;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .product-price-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+        .btn-card-action {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 9px 16px;
+            border-radius: 6px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-decoration: none;
+        }
+        .btn-card-action:hover {
+            background: var(--primary);
+            color: #07090E;
+            box-shadow: 0 0 16px var(--primary-glow);
+        }
+
+        /* --- 3. CONFIGURA LA TUA DIVISA (IN-PAGE WORKBENCH MAESTOSA) --- */
+        .configurator-station {
+            padding: 7.5rem 6%;
+            background: var(--dark-900);
+            position: relative;
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .configurator-station-wrap {
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .config-header-center {
+            text-align: center;
+            max-width: 780px;
+            margin: 0 auto 4rem;
+        }
+        .config-header-center h2 {
+            font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.05;
+            margin-bottom: 1.2rem;
+        }
+        .config-header-center h2 span {
+            color: var(--primary);
+        }
+        .config-header-center p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* Il Layout a 2 Colonne del Configuratore */
+        .configurator-desk {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 2.5rem;
+            background: var(--dark-800);
+            border: 1px solid var(--border-dark);
+            border-radius: 24px;
+            padding: 2.8rem;
+            box-shadow: 0 35px 80px rgba(0, 0, 0, 0.7), 0 0 60px rgba(204, 255, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        .configurator-desk::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 20%;
+            width: 400px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+        }
+
+        /* Colonna Sinistra: Area Live Preview */
+        .preview-workbench {
+            background: #111520;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 18px;
+            padding: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            min-height: 580px;
+        }
+        .preview-top-toolbar {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding-bottom: 1rem;
+        }
+        .preview-model-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .preview-render-badge {
+            background: rgba(255, 255, 255, 0.08);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #94A3B8;
+            padding: 3px 10px;
+            border-radius: 4px;
+        }
+
+        /* Simulatore Maglia Reale */
+        .shirt-stage {
+            position: relative;
+            width: 320px;
+            height: 420px;
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .shirt-color-fill {
+            position: absolute;
+            top: 11%;
+            left: 15%;
+            width: 70%;
+            height: 77%;
+            background-color: var(--primary);
+            border-radius: 20px;
+            z-index: 1;
+            transition: background-color 0.4s ease;
+        }
+        .shirt-photorealistic-png {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            pointer-events: none;
+            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+        }
+
+        /* Stampa Custom ad alta fedeltà */
+        .shirt-print-canvas {
+            position: absolute;
+            top: 31%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            mix-blend-mode: color-burn;
+            opacity: 0.88;
+            transform: rotate(-0.5deg);
+        }
+        .shirt-brand-crest {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+            color: #111111;
+        }
+        #stageShirtName {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.8rem;
+            color: #111111;
+            letter-spacing: 3px;
+            line-height: 1;
+            text-transform: uppercase;
+        }
+        #stageShirtNumber {
+            font-family: 'Black Ops One', sans-serif;
+            font-size: 5.6rem;
+            color: #111111;
+            line-height: 0.9;
+        }
+
+        .preview-footer-note {
+            font-size: 0.78rem;
+            color: #64748B;
+            text-align: center;
+            max-width: 85%;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Colonna Destra: Controlli del Configuratore */
+        .controls-workbench {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+        }
+        .controls-group-title {
+            font-size: 0.85rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 0.7rem;
+        }
+
+        /* 1. Selezione Colore Base */
+        .color-palette-selector {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .color-swatch-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 8px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        .color-swatch-btn:hover {
+            transform: scale(1.1);
+        }
+        .color-swatch-btn.active {
+            border-color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+            transform: scale(1.08);
+        }
+
+        /* 2. Selezione Modello */
+        .model-selector-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        .model-pill-opt {
+            background: var(--dark-700);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #CBD5E1;
+            padding: 10px 8px;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .model-pill-opt.active, .model-pill-opt:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: rgba(204, 255, 0, 0.08);
+        }
+
+        /* 3. Campi Input Nome & Numero */
+        .inputs-split-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 12px;
+        }
+        .cfg-input-box {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .cfg-input-box label {
+            font-size: 0.72rem;
+            color: #94A3B8;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+        }
+        .cfg-text-input {
+            width: 100%;
+            background: #0B0E17;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: border-color 0.25s ease;
+        }
+        .cfg-text-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(204, 255, 0, 0.2);
+        }
+
+        /* 4. Selezione Stile Tipografico */
+        .cfg-select {
+            width: 100%;
+            background: #0B0E17;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #FFFFFF;
+            padding: 12px 14px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .cfg-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* 5. Selezione Taglie */
+        .size-selector-row {
+            display: flex;
+            gap: 8px;
+        }
+        .size-btn {
+            flex: 1;
+            background: var(--dark-700);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #CBD5E1;
+            padding: 10px 4px;
+            border-radius: 6px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+        .size-btn.active, .size-btn:hover {
+            border-color: var(--primary);
+            background: var(--primary);
+            color: #07090E;
+        }
+
+        /* Card Riepilogo & Checkout */
+        .config-summary-card {
+            background: #0B0E17;
+            border: 1px solid rgba(204, 255, 0, 0.25);
+            border-radius: 12px;
+            padding: 1.4rem;
+            margin-top: 1rem;
+        }
+        .summary-flex-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+        }
+        .summary-price {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+        .summary-lead-time {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: #94A3B8;
+        }
+        .btn-add-team-cart {
+            width: 100%;
+            background: var(--primary);
+            color: #07090E;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 25px var(--primary-glow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-add-team-cart:hover {
+            background: #FFFFFF;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(255, 255, 255, 0.35);
+        }
+
+        /* --- 4. COME FUNZIONA (4 STEP VISUALI) --- */
+        .how-it-works-section {
+            padding: 7rem 6%;
+            background: var(--dark-800);
+            border-bottom: 1px solid var(--border-dark);
+        }
+        .steps-flow-grid {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.8rem;
+        }
+        .step-flow-card {
+            background: var(--dark-700);
+            border: 1px solid var(--border-dark);
+            border-radius: 18px;
+            padding: 2.4rem 1.8rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+        .step-flow-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border-glow);
+        }
+        .step-num-pill {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(204, 255, 0, 0.12);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.8rem;
+            box-shadow: 0 0 20px rgba(204, 255, 0, 0.2);
+        }
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #FFFFFF;
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+        .step-desc {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .step-bottom-tag {
+            margin-top: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: #64748B;
+            text-transform: uppercase;
+        }
+
+        /* --- 5. DETTAGLI E MATERIALI (COMPOSIZIONE EDITORIALE A CONTRASTO CHIARO) --- */
+        .materials-editorial-section {
+            padding: 8rem 6%;
+            background: var(--light-bg);
+            color: var(--light-text);
+            border-bottom: 1px solid var(--border-light);
+        }
+        .materials-container {
+            max-width: 1350px;
+            margin: 0 auto;
+        }
+        .materials-editorial-header {
+            max-width: 850px;
+            margin-bottom: 4rem;
+        }
+        .materials-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #15803D; /* Verde scuro atletico per sfondo chiaro */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+        .materials-editorial-header h2 {
+            font-size: clamp(2.3rem, 4.2vw, 3.6rem);
+            font-weight: 900;
+            color: #0F172A;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+        .materials-editorial-header p {
+            font-size: 1.15rem;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        /* Composizione Editoriale Asimmetrica */
+        .editorial-bento-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-rows: auto auto;
+            gap: 2rem;
+        }
+        .bento-big-feature {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+            background: #FFFFFF;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.06);
+            border: 1px solid #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        .bento-big-img-wrap {
+            width: 100%;
+            height: 480px;
+            overflow: hidden;
+            position: relative;
+        }
+        .bento-big-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .bento-big-feature:hover .bento-big-img-wrap img {
+            transform: scale(1.04);
+        }
+        .bento-big-body {
+            padding: 2.8rem;
+        }
+        .bento-big-body h3 {
+            font-size: 1.85rem;
+            font-weight: 900;
+            color: #0F172A;
+            margin-bottom: 1rem;
+        }
+        .bento-big-body p {
+            font-size: 1.05rem;
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 1.6rem;
+        }
+        .bento-specs-pill-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .bento-pill {
+            background: #F1F5F9;
+            color: #0F172A;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            font-family: 'JetBrains Mono', monospace;
+            border: 1px solid #CBD5E1;
+        }
+
+        .bento-side-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E8F0;
+            display: flex;
+            flex-direction: column;
+        }
+        .bento-side-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .bento-side-body {
+            padding: 1.8rem;
+        }
+        .bento-side-body h4 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #0F172A;
+            margin-bottom: 0.5rem;
+        }
+        .bento-side-body p {
+            font-size: 0.95rem;
+            color: #64748B;
+            line-height: 1.6;
+        }
+
+        /* --- 6. BUILT FOR YOUR TEAM --- */
+        .built-team-section {
+            padding: 8rem 6%;
+            background: var(--dark-900);
+            position: relative;
+            border-bottom: 1px solid var(--border-dark);
+            overflow: hidden;
+        }
+        .built-team-wrap {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .built-team-content h2 {
+            font-size: clamp(2.4rem, 4.4vw, 4rem);
+            font-weight: 900;
+            line-height: 1.05;
+            color: #FFFFFF;
+            margin-bottom: 1.4rem;
+        }
+        .built-team-content h2 span {
+            color: var(--primary);
+        }
+        .built-team-content p {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 2.2rem;
+        }
+        .team-perks-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+        .team-perks-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 1.05rem;
+            color: #E2E8F0;
+        }
+        .perk-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: rgba(204, 255, 0, 0.15);
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .built-team-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+        .team-img-card {
+            border-radius: 18px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-dark);
+            position: relative;
+        }
+        .team-img-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: contrast(1.1);
+        }
+        .team-img-card:first-child {
+            transform: translateY(-20px);
+        }
+        .team-img-card:last-child {
+            transform: translateY(20px);
+        }
+
+        /* --- 7. CALL TO ACTION FINALE --- */
+        .cta-final-section {
+            padding: 7rem 6%;
+            background: linear-gradient(135deg, #0A0D14 0%, #111723 50%, #162033 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-final-section::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 400px;
+            background: var(--primary);
+            filter: blur(150px);
+            opacity: 0.15;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .cta-final-wrap {
+            max-width: 880px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .cta-final-wrap h2 {
+            font-size: clamp(2.5rem, 5.2vw, 4.6rem);
+            font-weight: 900;
+            color: #FFFFFF;
+            line-height: 1.05;
+            margin-bottom: 1.4rem;
+        }
+        .cta-final-wrap h2 span {
+            color: var(--primary);
+            text-shadow: 0 0 35px var(--primary-glow);
+        }
+        .cta-final-wrap p {
+            font-size: 1.2rem;
+            color: #94A3B8;
+            line-height: 1.7;
+            margin-bottom: 2.8rem;
+        }
+        .cta-btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        /* --- CARRELLO LATERALE INTERATTIVO --- */
+        .cart-drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        .cart-drawer-backdrop.open {
+            opacity: 1;
+            visibility: visible;
+        }
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -450px;
+            width: 450px;
+            height: 100%;
+            background: #0D111A;
+            border-left: 1px solid var(--border-dark);
+            z-index: 2001;
+            padding: 2.2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: -20px 0 60px rgba(0, 0, 0, 0.8);
+        }
+        .cart-drawer.open {
+            right: 0;
+        }
+        .cart-drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1.2rem;
+        }
+        .cart-drawer-header h3 {
+            font-size: 1.4rem;
+            color: #FFFFFF;
+        }
+        .close-cart-btn {
+            font-size: 1.8rem;
+            color: #94A3B8;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .close-cart-btn:hover {
+            color: #FFFFFF;
+        }
+        .cart-items-feed {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 1.5rem 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .cart-item-row {
+            background: #141A26;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            padding: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-item-info h4 {
+            font-size: 0.95rem;
+            color: #FFFFFF;
+            margin-bottom: 3px;
+        }
+        .cart-item-info p {
+            font-size: 0.76rem;
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .cart-item-price-side {
+            text-align: right;
+        }
+        .cart-item-price-side strong {
+            display: block;
+            font-size: 1rem;
+            color: #FFFFFF;
+        }
+        .cart-item-remove-link {
+            font-size: 0.72rem;
+            color: #EF4444;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .cart-checkout-footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.4rem;
+        }
+        .cart-total-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.25rem;
+            margin-bottom: 1.2rem;
+        }
+        .cart-total-bar span.tot-val {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        /* --- FOOTER SARTORIALE AEROFIT --- */
+        footer {
+            background: #040508;
+            padding: 4rem 6% 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .footer-grid-aerofit {
+            max-width: 1350px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        .footer-brand-col h4 {
+            font-size: 1.6rem;
+            color: #FFFFFF;
+            margin-bottom: 0.8rem;
+        }
+        .footer-brand-col h4 span {
+            color: var(--primary);
+        }
+        .footer-brand-col p {
+            color: #64748B;
+            font-size: 0.9rem;
+            max-width: 380px;
+            line-height: 1.6;
+        }
+        .footer-col-links h5 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.2rem;
+        }
+        .footer-col-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .footer-col-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.88rem;
+            transition: color 0.2s;
+        }
+        .footer-col-links a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer-bottom-copy {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.82rem;
+            color: #64748B;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        /* --- RESPONSIVE MEDIA QUERIES --- */
+        @media (max-width: 1024px) {
+            .products-showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+            .configurator-desk { grid-template-columns: 1fr; padding: 2rem; }
+            .steps-flow-grid { grid-template-columns: repeat(2, 1fr); }
+            .editorial-bento-grid { grid-template-columns: 1fr; }
+            .bento-big-feature { grid-column: 1 / -1; grid-row: auto; }
+            .built-team-wrap { grid-template-columns: 1fr; }
+            .footer-grid-aerofit { grid-template-columns: 1fr 1fr; gap: 2rem; }
+        }
+
+        @media (max-width: 900px) {
+            .hamburger { display: block; }
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background: rgba(7, 9, 14, 0.98);
+                backdrop-filter: blur(25px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2.2rem;
+                z-index: 100;
+                transition: right 0.35s ease;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 1.4rem; font-weight: 700; }
+        }
+
+        @media (max-width: 640px) {
+            .top-ticker { flex-direction: column; gap: 4px; text-align: center; }
+            .hero-athletic { padding: 6.5rem 5% 4rem; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .products-showcase-grid { grid-template-columns: 1fr; }
+            .steps-flow-grid { grid-template-columns: 1fr; }
+            .inputs-split-row { grid-template-columns: 1fr; }
+            .model-selector-grid { grid-template-columns: 1fr; }
+            .cart-drawer { width: 100%; right: -100%; }
+            .footer-grid-aerofit { grid-template-columns: 1fr; }
+            .built-team-gallery { grid-template-columns: 1fr; }
+            .team-img-card:first-child, .team-img-card:last-child { transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- RUNNING TICKER / PORTFOLIO BADGE -->
+    <div class="top-ticker">
+        <div>
+            <span>⚡ INGEGNERIA TESSILE PRO &bull; </span>
+            <span class="highlight">SPEDIZIONE CAMPIONI IN 48H PER SOCIETÀ SPORTIVE</span>
+        </div>
+        <div>
+            <a href="index.html#progetti" class="portfolio-back-pill">
+                &larr; Torna a VERTEX Studio Portfolio
+            </a>
+        </div>
+    </div>
+
+    <!-- NAVBAR MODERNA ATHLETIC -->
+    <nav>
+        <a href="sportswear.html" class="nav-brand">
+            <div class="logo-text">AERO<span>FIT</span></div>
+            <span class="logo-badge">LAB 2026</span>
+        </a>
+
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#collezione" onclick="toggleMenu()">Collezione</a></li>
+            <li><a href="#configuratore" onclick="toggleMenu()">Configuratore</a></li>
+            <li><a href="#come-funziona" onclick="toggleMenu()">Come Funziona</a></li>
+            <li><a href="#materiali" onclick="toggleMenu()">Materiali</a></li>
+            <li><a href="#per-i-team" onclick="toggleMenu()">Per i Team</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <a href="#configuratore" class="btn-nav-custom">
+                <span>Personalizza Ora</span> &rarr;
+            </a>
+            <button class="btn-cart-nav" onclick="toggleCarrello()">
+                <span>Carrello</span>
+                <span class="cart-pill" id="cartCountBadge">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 1. HERO INIZIALE -->
+    <header class="hero-athletic">
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="hero-tag-dot"></span>
+                <span>Pro Performance Custom Teamwear</span>
+            </div>
+
+            <h1>
+                YOUR TEAM.<br>
+                <span class="lime">YOUR IDENTITY.</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Ingegneria tessile ultraleggera, sublimazione digitale 4K e personalizzazione totale. Progetta online le divise ufficiali della tua società sportiva con fit anatomico e traspirazione senza compromessi.
+            </p>
+
+            <div class="hero-actions">
+                <a href="#configuratore" class="btn-hero-primary">
+                    <span>Inizia a Personalizzare</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+                <a href="#collezione" class="btn-hero-secondary">
+                    <span>Esplora Collezione</span>
+                </a>
+            </div>
+
+            <div class="hero-specs-strip">
+                <div class="hero-spec-item">
+                    <span class="hero-spec-val">135<span>g/m²</span></span>
+                    <span class="hero-spec-lbl">Peso Piuma Traspirante</span>
+                </div>
+                <div class="hero-spec-item">
+                    <span class="hero-spec-val">100<span>%</span></span>
+                    <span class="hero-spec-lbl">Colori Sociali su Misura</span>
+                </div>
+                <div class="hero-spec-item">
+                    <span class="hero-spec-val">5-7<span>gg</span></span>
+                    <span class="hero-spec-lbl">Produzione &amp; Consegna</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. COLLEZIONE PRODOTTI -->
+    <section class="collection-section" id="collezione">
+        <div class="section-header-wrap">
+            <div>
+                <span class="section-tag-inline">Collezione Ufficiale</span>
+                <h2>Capi tecnici progettati per la vittoria.</h2>
+            </div>
+            <p class="section-header-desc">
+                Ogni capo della linea AeroFit è costruito con filati microforati ad asciugatura rapida per resistere alle sollecitazioni più estreme sul campo di gara.
+            </p>
+        </div>
+
+        <div class="products-showcase-grid">
+            <!-- Card 1: Maglia da Gara -->
+            <div class="product-card-pro">
+                <div class="product-img-box">
+                    <span class="product-badge-tech">Pro Match</span>
+                    <span class="product-badge-flag">Best Seller</span>
+                    <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maglia da Gara Custom" onerror="this.onerror=null;this.src='abbigliamento.jpeg';">
+                </div>
+                <div class="product-content-box">
+                    <div>
+                        <span class="product-category">Gara Ufficiale</span>
+                        <h3 class="product-title">Maglia Gara Match Pro</h3>
+                        <ul class="product-specs-list">
+                            <li><span class="dot"></span> Tessuto Aerotech™ Microforato</li>
+                            <li><span class="dot"></span> Sublimazione completa HD</li>
+                            <li><span class="dot"></span> Colletto V ergonomico anti-sfregamento</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer-row">
+                        <div class="product-price-box">
+                            <span class="product-price-lbl">A partire da</span>
+                            <span class="product-price-val">€ 24.90</span>
+                        </div>
+                        <a href="#configuratore" class="btn-card-action" onclick="selezionaModello('Maglia Gara Match Pro', 24.90)">Configura &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2: Divisa da Allenamento -->
+            <div class="product-card-pro">
+                <div class="product-img-box">
+                    <span class="product-badge-tech">Training</span>
+                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Training Shirt" onerror="this.onerror=null;this.src='abbigliamento.jpeg';">
+                </div>
+                <div class="product-content-box">
+                    <div>
+                        <span class="product-category">Allenamento &amp; Warm-up</span>
+                        <h3 class="product-title">T-Shirt Training Tech</h3>
+                        <ul class="product-specs-list">
+                            <li><span class="dot"></span> Tessuto Dry-Lite 125 g/m²</li>
+                            <li><span class="dot"></span> Massima ventilazione ascellare</li>
+                            <li><span class="dot"></span> Resistenza a 100+ lavaggi intensivi</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer-row">
+                        <div class="product-price-box">
+                            <span class="product-price-lbl">A partire da</span>
+                            <span class="product-price-val">€ 19.90</span>
+                        </div>
+                        <a href="#configuratore" class="btn-card-action" onclick="selezionaModello('T-Shirt Training Tech', 19.90)">Configura &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3: Pantaloncini da Gara -->
+            <div class="product-card-pro">
+                <div class="product-img-box">
+                    <span class="product-badge-tech">Mobility</span>
+                    <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Pantaloncini da Gara" onerror="this.onerror=null;this.src='abbigliamento.jpeg';">
+                </div>
+                <div class="product-content-box">
+                    <div>
+                        <span class="product-category">Bottoms</span>
+                        <h3 class="product-title">Shorts Gara Velocity</h3>
+                        <ul class="product-specs-list">
+                            <li><span class="dot"></span> Taglio atletico con spacchetti laterali</li>
+                            <li><span class="dot"></span> Cordino piatto regolabile interno</li>
+                            <li><span class="dot"></span> Logo squadra e numero applicabili</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer-row">
+                        <div class="product-price-box">
+                            <span class="product-price-lbl">A partire da</span>
+                            <span class="product-price-val">€ 16.50</span>
+                        </div>
+                        <a href="#configuratore" class="btn-card-action" onclick="selezionaModello('Shorts Gara Velocity', 16.50)">Configura &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4: Felpe & Tute Sportive -->
+            <div class="product-card-pro">
+                <div class="product-img-box">
+                    <span class="product-badge-tech">Teamwear Outerwear</span>
+                    <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Felpa Sportiva Team" onerror="this.onerror=null;this.src='abbigliamento.jpeg';">
+                </div>
+                <div class="product-content-box">
+                    <div>
+                        <span class="product-category">Rappresentanza &amp; Outdoor</span>
+                        <h3 class="product-title">Track Jacket Pro Zip</h3>
+                        <ul class="product-specs-list">
+                            <li><span class="dot"></span> Interno felpato termoregolatore</li>
+                            <li><span class="dot"></span> Zip nastrata antivento e tasche sicure</li>
+                            <li><span class="dot"></span> Dettagli catarifrangenti 3M</li>
+                        </ul>
+                    </div>
+                    <div class="product-footer-row">
+                        <div class="product-price-box">
+                            <span class="product-price-lbl">A partire da</span>
+                            <span class="product-price-val">€ 38.00</span>
+                        </div>
+                        <a href="#configuratore" class="btn-card-action" onclick="selezionaModello('Track Jacket Pro Zip', 38.00)">Configura &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. CONFIGURA LA TUA DIVISA (IN-PAGE WORKSTATION PRINCIPALE) -->
+    <section class="configurator-station" id="configuratore">
+        <div class="configurator-station-wrap">
+            <div class="config-header-center">
+                <span class="section-tag-inline">Studio 3D Live</span>
+                <h2>Configura la tua divisa in <span>tempo reale</span>.</h2>
+                <p>
+                    Seleziona il colore base del tuo club, scegli lo stile tipografico, digita nome e numero dell'atleta: guarda il risultato fondersi istantaneamente sul capo prima dell'ordine.
+                </p>
+            </div>
+
+            <div class="configurator-desk">
+                <!-- Colonna Sinistra: Preview Stage -->
+                <div class="preview-workbench">
+                    <div class="preview-top-toolbar">
+                        <div class="preview-model-tag">
+                            <span style="color:#CCFF00;">●</span>
+                            <span id="activeModelLabel">MAGLIA GARA MATCH PRO</span>
+                        </div>
+                        <div class="preview-render-badge">VISTA LIVE 4K</div>
+                    </div>
+
+                    <!-- Palcoscenico della Maglia con Realismo Dinamico -->
+                    <div class="shirt-stage">
+                        <div class="shirt-color-fill" id="stageColorFill"></div>
+                        <img src="shirt_template.png" alt="AeroFit T-Shirt" class="shirt-photorealistic-png" onerror="this.onerror=null;this.src='https://www.freeiconspng.com/uploads/blank-t-shirt-png-14.png';">
+                        
+                        <div class="shirt-print-canvas" id="stagePrintCanvas">
+                            <div class="shirt-brand-crest">AEROFIT PRO</div>
+                            <div id="stageShirtName">AEROFIT</div>
+                            <div id="stageShirtNumber">10</div>
+                        </div>
+                    </div>
+
+                    <div class="preview-footer-note">
+                        💡 L'anteprima visualizza proporzioni reali. Prima della stampa, il nostro team di grafici invierà una scheda tecnica PDF ad alta risoluzione con centratura millimetrica.
+                    </div>
+                </div>
+
+                <!-- Colonna Destra: Pannello Controlli Professionale -->
+                <div class="controls-workbench">
+                    <!-- 1. Colore Base del Club -->
+                    <div>
+                        <div class="controls-group-title">1. Colore Sociale del Club</div>
+                        <div class="color-palette-selector">
+                            <button class="color-swatch-btn active" style="background: #CCFF00;" title="Volt Lime" onclick="cambiaColore('#CCFF00', '#111111', 'color-burn', this, 'Volt Lime')"></button>
+                            <button class="color-swatch-btn" style="background: #FFFFFF;" title="Bianco Ghiaccio" onclick="cambiaColore('#FFFFFF', '#111111', 'color-burn', this, 'Bianco Ghiaccio')"></button>
+                            <button class="color-swatch-btn" style="background: #11141D;" title="Stealth Black" onclick="cambiaColore('#11141D', '#E2E8F0', 'normal', this, 'Stealth Black')"></button>
+                            <button class="color-swatch-btn" style="background: #EF4444;" title="Crimson Red" onclick="cambiaColore('#EF4444', '#111111', 'color-burn', this, 'Crimson Red')"></button>
+                            <button class="color-swatch-btn" style="background: #2563EB;" title="Royal Blue" onclick="cambiaColore('#2563EB', '#FFFFFF', 'normal', this, 'Royal Blue')"></button>
+                            <button class="color-swatch-btn" style="background: #EAB308;" title="Gold Trophy" onclick="cambiaColore('#EAB308', '#111111', 'color-burn', this, 'Gold Trophy')"></button>
+                        </div>
+                    </div>
+
+                    <!-- 2. Selezione Modello -->
+                    <div>
+                        <div class="controls-group-title">2. Modello Divisa</div>
+                        <div class="model-selector-grid">
+                            <div class="model-pill-opt active" onclick="selezionaModello('Maglia Gara Match Pro', 24.90, this)">Match Pro</div>
+                            <div class="model-pill-opt" onclick="selezionaModello('T-Shirt Training Tech', 19.90, this)">Training Tee</div>
+                            <div class="model-pill-opt" onclick="selezionaModello('Track Jacket Pro Zip', 38.00, this)">Track Jacket</div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Tipografia dei Numeri -->
+                    <div>
+                        <div class="controls-group-title">3. Tipografia Sportiva</div>
+                        <select class="cfg-select" id="fontSelectBox" onchange="aggiornaDatiStampa()">
+                            <option value="'Bebas Neue', sans-serif">Modern Athletic (Bebas Bold)</option>
+                            <option value="'Black Ops One', sans-serif">Squadra Tattica (Black Ops)</option>
+                            <option value="'Teko', sans-serif">Vertical High-Speed (Teko)</option>
+                            <option value="'Outfit', sans-serif">Classico Geometrico (Outfit)</option>
+                        </select>
+                    </div>
+
+                    <!-- 4. Nome e Numero -->
+                    <div>
+                        <div class="controls-group-title">4. Personalizzazione Atleta</div>
+                        <div class="inputs-split-row">
+                            <div class="cfg-input-box">
+                                <label>Nome Squadra o Atleta</label>
+                                <input type="text" class="cfg-text-input" id="cfgInputName" placeholder="Es. AEROFIT" value="AEROFIT" maxlength="12" oninput="aggiornaDatiStampa()">
+                            </div>
+                            <div class="cfg-input-box">
+                                <label>Numero (0-99)</label>
+                                <input type="number" class="cfg-text-input" id="cfgInputNum" placeholder="10" value="10" min="0" max="99" oninput="aggiornaDatiStampa()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Taglia -->
+                    <div>
+                        <div class="controls-group-title">5. Taglia di Partenza</div>
+                        <div class="size-selector-row">
+                            <div class="size-btn" onclick="selezionaTaglia('XS', this)">XS</div>
+                            <div class="size-btn" onclick="selezionaTaglia('S', this)">S</div>
+                            <div class="size-btn active" onclick="selezionaTaglia('M', this)">M</div>
+                            <div class="size-btn" onclick="selezionaTaglia('L', this)">L</div>
+                            <div class="size-btn" onclick="selezionaTaglia('XL', this)">XL</div>
+                            <div class="size-btn" onclick="selezionaTaglia('XXL', this)">XXL</div>
+                        </div>
+                    </div>
+
+                    <!-- Box Riepilogo & Aggiunta al Carrello -->
+                    <div class="config-summary-card">
+                        <div class="summary-flex-row">
+                            <div>
+                                <span class="summary-lead-time">TEMPO STIMATO: 5-7 GG LAVORATIVI</span>
+                                <div style="font-size: 0.82rem; color: #E2E8F0; margin-top: 2px;">
+                                    Bozza grafica PDF inclusa &bull; Nessun minimo obbligatorio
+                                </div>
+                            </div>
+                            <div class="summary-price" id="summaryPriceTag">€ 24.90</div>
+                        </div>
+
+                        <button class="btn-add-team-cart" onclick="aggiungiProdottoConfigurato()">
+                            <span>Aggiungi al Carrello</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. COME FUNZIONA (4 PASSAGGI VISUALI) -->
+    <section class="how-it-works-section" id="come-funziona">
+        <div class="section-header-wrap">
+            <div>
+                <span class="section-tag-inline">Metodo Collaudato</span>
+                <h2>Quattro passaggi. Zero complicazioni.</h2>
+            </div>
+            <p class="section-header-desc">
+                Dal concept iniziale fino alla consegna delle divise in spogliatoio: abbiamo snellito il processo per farti risparmiare tempo e garantirti il massimo risultato.
+            </p>
+        </div>
+
+        <div class="steps-flow-grid">
+            <!-- Step 1 -->
+            <div class="step-flow-card">
+                <div>
+                    <div class="step-num-pill">01</div>
+                    <h3 class="step-title">Scegli il Modello</h3>
+                    <p class="step-desc">
+                        Esplora i nostri template per calcio, volley, basket, padel o running, ottimizzati con vestibilità ergonomica su misura.
+                    </p>
+                </div>
+                <div class="step-bottom-tag">FASE // 01 SELEZIONE</div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="step-flow-card">
+                <div>
+                    <div class="step-num-pill">02</div>
+                    <h3 class="step-title">Personalizza i Dettagli</h3>
+                    <p class="step-desc">
+                        Applica i colori societari, assegna nomi e numeri per ciascun membro e carica il logo del club o degli sponsor tecnici.
+                    </p>
+                </div>
+                <div class="step-bottom-tag">FASE // 02 GRAPHICS</div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="step-flow-card">
+                <div>
+                    <div class="step-num-pill">03</div>
+                    <h3 class="step-title">Visualizza il Risultato</h3>
+                    <p class="step-desc">
+                        Verifica l'anteprima fotorealistica e ricevi entro 24 ore la scheda di produzione vettoriale definitiva dai nostri designer.
+                    </p>
+                </div>
+                <div class="step-bottom-tag">FASE // 03 PROOF APPROVAL</div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="step-flow-card">
+                <div>
+                    <div class="step-num-pill">04</div>
+                    <h3 class="step-title">Prepara il Riepilogo</h3>
+                    <p class="step-desc">
+                        Conferma la lista taglie per tutta la rosa: avviamo la sublimazione termica e spediamo le divise pronte per la prima di campionato.
+                    </p>
+                </div>
+                <div class="step-bottom-tag">FASE // 04 DELIVERY LIVE</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DETTAGLI E MATERIALI (COMPOSIZIONE EDITORIALE A SFONDO CHIARO) -->
+    <section class="materials-editorial-section" id="materiali">
+        <div class="materials-container">
+            <div class="materials-editorial-header">
+                <span class="materials-tag">Ingegneria Tessile Avanzata</span>
+                <h2>Materiali testati per non farti sentire il peso della fatica.</h2>
+                <p>
+                    Non utilizziamo tessuti generici da catalogo. I nostri capi nascono dall'unione di poliestere microforato riciclato ad alta densità e cuciture piatte ergonomiche che eliminano qualsiasi attrito sulla pelle.
+                </p>
+            </div>
+
+            <div class="editorial-bento-grid">
+                <!-- Card Grande Principale -->
+                <div class="bento-big-feature">
+                    <div class="bento-big-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Struttura Tessuto Macro" onerror="this.onerror=null;this.src='abbigliamento.jpeg';">
+                    </div>
+                    <div class="bento-big-body">
+                        <h3>Fibra HyperBreath™ 135 GSM a Nido d'Ape</h3>
+                        <p>
+                            Una struttura tridimensionale a microcanali che accelera l'evaporazione del sudore verso l'esterno, mantenendo il corpo asciutto e leggero anche nei minuti finali di recupero.
+                        </p>
+                        <div class="bento-specs-pill-group">
+                            <span class="bento-pill">135 G/M² DENSITÀ</span>
+                            <span class="bento-pill">TERMOREGOLAZIONE ATTIVA</span>
+                            <span class="bento-pill">ZERO ODOR ANTIBACTERIAL</span>
+                            <span class="bento-pill">RESISTENZA UV 50+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card Laterale 1: Cuciture Flat-Locking -->
+                <div class="bento-side-card">
+                    <img src="https://images.unsplash.com/photo-1581655353564-df123a1eb820?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Cuciture Dettaglio" class="bento-side-img" onerror="this.onerror=null;this.src='abbigliamento.jpeg';">
+                    <div class="bento-side-body">
+                        <h4>Cuciture Flat-Locking a 4 Aghi</h4>
+                        <p>
+                            Cuciture completamente piatte realizzate con filati elasticizzati: zero sfregamenti sul petto e massima libertà nei cambi di direzione.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card Laterale 2: Sublimazione Digitale 4K -->
+                <div class="bento-side-card">
+                    <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Stampa Sublimatica" class="bento-side-img" onerror="this.onerror=null;this.src='abbigliamento.jpeg';">
+                    <div class="bento-side-body">
+                        <h4>Sublimazione Molecolare 4K</h4>
+                        <p>
+                            I pigmenti penetrano direttamente nelle fibre del tessuto: i numeri e i loghi non si screpolano e non appesantiscono la divisa dopo i lavaggi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. BUILT FOR YOUR TEAM (SPIRITO DI SQUADRA) -->
+    <section class="built-team-section" id="per-i-team">
+        <div class="built-team-wrap">
+            <div class="built-team-content">
+                <span class="section-tag-inline" style="color:#CCFF00;">Team Service Dedicato</span>
+                <h2>BUILT FOR YOUR TEAM. <span>CREATO PER VINCERE.</span></h2>
+                <p>
+                    Vestire una squadra significa forgiare un'identità condivisa. Supportiamo società sportive, federazioni, accademie giovanili e tornei amatoriali con un servizio personalizzato a 360 gradi.
+                </p>
+
+                <ul class="team-perks-list">
+                    <li>
+                        <span class="perk-check">✓</span>
+                        <div>
+                            <strong>Listini Scalabili da 10 a 500+ Capi:</strong> Tariffe all-inclusive trasparenti senza costi nascosti per impianti stampa o numerazioni aggiuntive.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="perk-check">✓</span>
+                        <div>
+                            <strong>Ristampa Garantita per Nuovi Ingressi:</strong> Un nuovo giocatore a metà stagione? Ristampiamo anche una singola maglia allo stesso prezzo del lotto squadra.
+                        </div>
+                    </li>
+                    <li>
+                        <span class="perk-check">✓</span>
+                        <div>
+                            <strong>Spedizione Campioni Prova Gratuita:</strong> Invieremo alla sede del tuo club un kit prova con taglie assortite per consentire a ogni atleta di scegliere il fit perfetto.
+                        </div>
+                    </li>
+                </ul>
+
+                <div>
+                    <a href="#configuratore" class="btn-hero-primary">
+                        <span>Configura il Kit per la Tua Squadra</span> &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <!-- Galleria Immagini Team in Azione -->
+            <div class="built-team-gallery">
+                <div class="team-img-card">
+                    <img src="abbigliamento.jpeg" alt="Laboratorio e Divise Team AeroFit" onerror="this.onerror=null;this.src='abbigliamento.jpeg';">
+                </div>
+                <div class="team-img-card">
+                    <img src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Atleti Allenamento Team" onerror="this.onerror=null;this.src='abbigliamento.jpeg';">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. CALL TO ACTION FINALE -->
+    <section class="cta-final-section">
+        <div class="cta-final-wrap">
+            <span class="section-tag-inline" style="color:var(--primary); margin-bottom: 1.2rem;">Let's Make History</span>
+            <h2>READY TO CREATE <span>YOUR IDENTITY?</span></h2>
+            <p>
+                Dalla prima bozza grafica al fischio d'inizio. Entra nella nuova era del teamwear personalizzato e scendi in campo con la sicurezza di una divisa creata esclusivamente per voi.
+            </p>
+
+            <div class="cta-btn-group">
+                <a href="#configuratore" class="btn-hero-primary" style="padding: 20px 48px; font-size: 1.2rem;">
+                    <span>Configura la Tua Divisa Ora</span> &rarr;
+                </a>
+                <a href="mailto:vertexstudio@outlook.it?subject=Richiesta%20Kit%20Campione%20AeroFit" class="btn-hero-secondary" style="padding: 18px 36px;">
+                    <span>Richiedi Kit Campioni Società</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER MODERNO SARTORIALE -->
+    <footer>
+        <div class="footer-grid-aerofit">
+            <div class="footer-brand-col">
+                <h4>AERO<span>FIT</span> LAB</h4>
+                <p>
+                    Brand digitale di abbigliamento sportivo personalizzato ad alte prestazioni, ingegnerizzato da VERTEX Studio per club, federazioni e sportivi esigenti.
+                </p>
+            </div>
+            <div class="footer-col-links">
+                <h5>Collezione</h5>
+                <ul>
+                    <li><a href="#collezione">Maglie Gara Pro</a></li>
+                    <li><a href="#collezione">Training T-Shirt</a></li>
+                    <li><a href="#collezione">Shorts Velocity</a></li>
+                    <li><a href="#collezione">Track Jacket Outerwear</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-links">
+                <h5>Piattaforma</h5>
+                <ul>
+                    <li><a href="#configuratore">Configuratore 3D Live</a></li>
+                    <li><a href="#come-funziona">Guida all'Ordine Team</a></li>
+                    <li><a href="#materiali">Tecnologia HyperBreath™</a></li>
+                    <li><a href="#per-i-team">Servizio Società Sportive</a></li>
+                </ul>
+            </div>
+            <div class="footer-col-links">
+                <h5>Portfolio</h5>
+                <ul>
+                    <li><a href="case-study-aerofit.html">Case Study Dettagliato</a></li>
+                    <li><a href="index.html#progetti">Tutti i Progetti VERTEX</a></li>
+                    <li><a href="chi-siamo.html">Chi Siamo</a></li>
+                    <li><a href="mailto:vertexstudio@outlook.it">Contatta lo Studio</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom-copy">
+            <div>
+                &copy; 2026 AEROFIT Custom Sportswear &bull; Concept &amp; Code by VERTEX Studio.
+            </div>
+            <div>
+                <a href="case-study-aerofit.html" style="color:var(--primary); text-decoration:none; font-weight:700;">
+                    Visualizza il Case Study di questo progetto &rarr;
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CARRELLO DRAWER LATERALE -->
+    <div class="cart-drawer-backdrop" id="cartBackdrop" onclick="toggleCarrello()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div>
+            <div class="cart-drawer-header">
+                <h3>Carrello Team (<span id="cartDrawerCount">0</span>)</h3>
+                <span class="close-cart-btn" onclick="toggleCarrello()">&times;</span>
+            </div>
+            <div class="cart-items-feed" id="cartFeedContainer">
+                <p style="color: #64748B; text-align: center; margin-top: 3rem;">
+                    Nessun capo configurato nel carrello.
+                </p>
+            </div>
+        </div>
+
+        <div class="cart-checkout-footer">
+            <div class="cart-total-bar">
+                <span style="color: #94A3B8;">Totale Stimato</span>
+                <span class="tot-val" id="cartGrandTotal">€ 0.00</span>
+            </div>
+            <button class="btn-add-team-cart" onclick="procediCheckoutSimulato()">
+                <span>Procedi con l'Ordine</span> &rarr;
+            </button>
+            <div style="font-size: 0.72rem; color: #64748B; text-align: center; margin-top: 10px;">
+                Bozza grafica di conferma inviata prima del pagamento effettivo.
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT DEL CONFIGURATORE & CARRELLO -->
+    <script>
+        // Stato del Configuratore
+        let statoConfiguratore = {
+            modello: 'Maglia Gara Match Pro',
+            prezzo: 24.90,
+            coloreNome: 'Volt Lime',
+            coloreHex: '#CCFF00',
+            nomeAtleta: 'AEROFIT',
+            numeroAtleta: '10',
+            fontFam: "'Bebas Neue', sans-serif",
+            taglia: 'M'
+        };
+
+        let carrelloArticoli = [];
+
+        // Riferimenti DOM
+        const stageColorFill = document.getElementById('stageColorFill');
+        const stageShirtName = document.getElementById('stageShirtName');
+        const stageShirtNumber = document.getElementById('stageShirtNumber');
+        const stagePrintCanvas = document.getElementById('stagePrintCanvas');
+        const cfgInputName = document.getElementById('cfgInputName');
+        const cfgInputNum = document.getElementById('cfgInputNum');
+        const fontSelectBox = document.getElementById('fontSelectBox');
+        const activeModelLabel = document.getElementById('activeModelLabel');
+        const summaryPriceTag = document.getElementById('summaryPriceTag');
+
+        const cartDrawer = document.getElementById('cartDrawer');
+        const cartBackdrop = document.getElementById('cartBackdrop');
+        const cartCountBadge = document.getElementById('cartCountBadge');
+        const cartDrawerCount = document.getElementById('cartDrawerCount');
+        const cartFeedContainer = document.getElementById('cartFeedContainer');
+        const cartGrandTotal = document.getElementById('cartGrandTotal');
+
+        // Toggle Menu Mobile
+        function toggleMenu() {
+            if (window.innerWidth > 900) return;
+            const nav = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            nav.classList.toggle('active');
+            hamburger.innerHTML = nav.classList.contains('active') ? '✕' : '☰';
+        }
+
+        // Toggle Carrello
+        function toggleCarrello() {
+            cartDrawer.classList.toggle('open');
+            cartBackdrop.classList.toggle('open');
+        }
+
+        // Cambio Colore in tempo reale
+        function cambiaColore(hex, textColor, blendMode, element, nomeColore) {
+            statoConfiguratore.coloreHex = hex;
+            statoConfiguratore.coloreNome = nomeColore;
+            stageColorFill.style.backgroundColor = hex;
+
+            stageShirtName.style.color = textColor;
+            stageShirtNumber.style.color = textColor;
+            stagePrintCanvas.style.mixBlendMode = blendMode;
+
+            document.querySelectorAll('.color-swatch-btn').forEach(b => b.classList.remove('active'));
+            if (element) element.classList.add('active');
+        }
+
+        // Selezione Modello
+        function selezionaModello(nomeModello, prezzo, element) {
+            statoConfiguratore.modello = nomeModello;
+            statoConfiguratore.prezzo = prezzo;
+            activeModelLabel.innerText = nomeModello.toUpperCase();
+            summaryPriceTag.innerText = `€ ${prezzo.toFixed(2)}`;
+
+            if (element) {
+                document.querySelectorAll('.model-pill-opt').forEach(m => m.classList.remove('active'));
+                element.classList.add('active');
+            }
+        }
+
+        // Selezione Taglia
+        function selezionaTaglia(taglia, element) {
+            statoConfiguratore.taglia = taglia;
+            document.querySelectorAll('.size-btn').forEach(s => s.classList.remove('active'));
+            if (element) element.classList.add('active');
+        }
+
+        // Aggiorna Dati di Stampa (Nome, Numero, Font)
+        function aggiornaDatiStampa() {
+            const nome = cfgInputName.value.toUpperCase() || 'AEROFIT';
+            const num = cfgInputNum.value || '10';
+            const font = fontSelectBox.value;
+
+            statoConfiguratore.nomeAtleta = nome;
+            statoConfiguratore.numeroAtleta = num;
+            statoConfiguratore.fontFam = font;
+
+            stageShirtName.innerText = nome;
+            stageShirtNumber.innerText = num;
+            stageShirtName.style.fontFamily = font;
+        }
+
+        // Aggiungi al Carrello
+        function aggiungiProdottoConfigurato() {
+            const nuovoArticolo = {
+                titolo: statoConfiguratore.modello,
+                colore: statoConfiguratore.coloreNome,
+                nome: statoConfiguratore.nomeAtleta,
+                numero: statoConfiguratore.numeroAtleta,
+                taglia: statoConfiguratore.taglia,
+                prezzo: statoConfiguratore.prezzo
+            };
+
+            carrelloArticoli.push(nuovoArticolo);
+            aggiornaCarrelloUI();
+            toggleCarrello();
+        }
+
+        // Rimuovi dal Carrello
+        function rimuoviDalCarrello(index) {
+            carrelloArticoli.splice(index, 1);
+            aggiornaCarrelloUI();
+        }
+
+        // Aggiorna Interfaccia Carrello
+        function aggiornaCarrelloUI() {
+            const totCapi = carrelloArticoli.length;
+            cartCountBadge.innerText = totCapi;
+            cartDrawerCount.innerText = totCapi;
+
+            if (totCapi === 0) {
+                cartFeedContainer.innerHTML = `
+                    <p style="color: #64748B; text-align: center; margin-top: 3rem;">
+                        Nessun capo configurato nel carrello.
+                    </p>
+                `;
+                cartGrandTotal.innerText = '€ 0.00';
+                return;
+            }
+
+            let totale = 0;
+            cartFeedContainer.innerHTML = '';
+
+            carrelloArticoli.forEach((art, idx) => {
+                totale += art.prezzo;
+                cartFeedContainer.innerHTML += `
+                    <div class="cart-item-row">
+                        <div class="cart-item-info">
+                            <h4>${art.titolo} (Taglia ${art.taglia})</h4>
+                            <p>${art.colore} &bull; ${art.nome} #${art.numero}</p>
+                        </div>
+                        <div class="cart-item-price-side">
+                            <strong>€ ${art.prezzo.toFixed(2)}</strong>
+                            <span class="cart-item-remove-link" onclick="rimuoviDalCarrello(${idx})">Rimuovi</span>
+                        </div>
+                    </div>
+                `;
+            });
+
+            cartGrandTotal.innerText = `€ ${totale.toFixed(2)}`;
+        }
+
+        function procediCheckoutSimulato() {
+            if (carrelloArticoli.length === 0) {
+                alert('Il carrello è vuoto! Configura prima un capo sportivo.');
+                return;
+            }
+            alert(`Grazie per aver configurato il tuo ordine per ${carrelloArticoli.length} capi! Un designer di VERTEX ti invierà la bozza tecnica ad alta risoluzione via email.`);
+        }
+    </script>
+</body>
+</html>

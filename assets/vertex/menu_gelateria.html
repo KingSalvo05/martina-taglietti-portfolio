@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Menù - Sweet Dream Gelateria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --pink: #FF9EBB; --yellow: #FFD966; --blue: #88D9E6; --text: #5A4753; --bg: #FFF5F7;}
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Quicksand', sans-serif; color: var(--text); }
+        body { background: var(--bg); }
+        header { text-align: center; padding: 2rem 1rem; background: white; border-bottom: 4px dashed var(--pink); border-radius: 0 0 20px 20px;}
+        h1 { font-family: 'Fredoka One', cursive; font-size: 2.2rem; color: var(--pink); }
+        .hero-img { width: 100%; height: 180px; object-fit: cover; border-radius: 20px; margin: 15px 0; box-shadow: 0 5px 15px rgba(255, 158, 187, 0.3);}
+        .container { padding: 1rem; }
+        .category { display: flex; overflow-x: auto; gap: 10px; padding: 10px 0; scrollbar-width: none; }
+        .category::-webkit-scrollbar { display: none; }
+        .cat-btn { background: white; border: 2px solid var(--blue); padding: 8px 16px; border-radius: 30px; font-weight: 700; color: var(--blue); white-space: nowrap;}
+        .cat-btn.active { background: var(--blue); color: white; }
+        .menu-title { font-family: 'Fredoka One', cursive; color: var(--blue); font-size: 1.5rem; margin: 1.5rem 0 1rem; }
+        .card { background: white; padding: 15px; border-radius: 15px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; border-left: 5px solid var(--yellow);}
+        .card h3 { font-weight: 700; font-size: 1.1rem; margin-bottom: 5px;}
+        .card p { font-size: 0.85rem; color: #888; }
+        .price { font-family: 'Fredoka One', cursive; color: var(--pink); font-size: 1.2rem; }
+        .badge { background: var(--yellow); color: var(--text); font-size: 0.7rem; padding: 3px 8px; border-radius: 10px; margin-left: 5px; font-weight: 700;}
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sweet Dream 🍦</h1>
+        <p style="font-weight: 700; color: #888;">GELATERIA ARTIGIANALE</p>
+    </header>
+    <div class="container">
+        <img src="https://images.unsplash.com/photo-1563805042-7684c8a9e9cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="hero-img">
+        
+        <div class="category">
+            <div class="cat-btn active">Coni & Coppette</div>
+            <div class="cat-btn">Gusti Speciali</div>
+            <div class="cat-btn">Frappè</div>
+            <div class="cat-btn">Crepes</div>
+        </div>
+
+        <h2 class="menu-title">Coni & Coppette</h2>
+        <div class="card">
+            <div>
+                <h3>Piccolo (2 Gusti)</h3>
+                <p>Cialda artigianale o coppetta ecologica.</p>
+            </div>
+            <div class="price">€ 2.50</div>
+        </div>
+        <div class="card">
+            <div>
+                <h3>Medio (3 Gusti) <span class="badge">TOP</span></h3>
+                <p>Include panna montata fresca.</p>
+            </div>
+            <div class="price">€ 3.50</div>
+        </div>
+
+        <h2 class="menu-title">I Nostri Gusti Top</h2>
+        <div class="card" style="border-left-color: var(--pink);">
+            <div>
+                <h3>Pistacchio Puro Siciliano</h3>
+                <p>Pistacchi di Bronte DOP salati.</p>
+            </div>
+        </div>
+        <div class="card" style="border-left-color: var(--pink);">
+            <div>
+                <h3>Cioccolato Fondente 80%</h3>
+                <p>Senza latte, intenso e cremoso.</p>
+            </div>
+        </div>
+        <div class="card" style="border-left-color: var(--pink);">
+            <div>
+                <h3>Cheesecake ai Frutti di Bosco</h3>
+                <p>Biscotto croccante e variegato ai frutti rossi.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

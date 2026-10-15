@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TecnoMetal CNC | Lavorazioni Meccaniche Avanzate</title>
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #0A2463; /* Blu più profondo */
+            --accent-orange: #FF5E5B; /* Rosso/Arancio acceso */
+            --dark-metal: #1E1E24;
+            --light-gray: #F2F3F5;
+            --white: #FFFFFF;
+            --border-color: #E2E8F0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
+        body { background-color: var(--light-gray); color: var(--dark-metal); }
+        h1, h2, h3, .logo { font-family: 'Montserrat', sans-serif; }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--dark-metal); color: #aaa;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 8px 5%; font-size: 0.8rem; letter-spacing: 1px;
+        }
+        .top-bar span { color: var(--accent-orange); font-weight: bold; }
+
+        /* Navbar */
+        nav {
+            background-color: var(--white); display: flex; justify-content: space-between; align-items: center;
+            padding: 1.2rem 5%; position: sticky; top: 0; z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        .logo { font-size: 2.2rem; font-weight: 900; letter-spacing: -1.5px; color: var(--primary-blue);}
+        .logo span { color: var(--accent-orange); }
+
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a {
+            color: var(--dark-metal); text-decoration: none; font-size: 0.95rem; 
+            font-weight: 600; text-transform: uppercase; position: relative;
+        }
+        /* Effetto sottolineatura animata sui link */
+        .nav-links a::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -5px; left: 0; background-color: var(--accent-orange);
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after { width: 100%; }
+
+        .btn-quote {
+            background-color: var(--accent-orange); color: var(--white);
+            padding: 12px 28px; font-family: 'Montserrat', sans-serif;
+            font-weight: 800; text-decoration: none; text-transform: uppercase;
+            border-radius: 4px; border: none; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(255, 94, 91, 0.4); transition: all 0.3s;
+        }
+        .btn-quote:hover { background-color: #E04A47; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 94, 91, 0.6); }
+
+        /* Hero Section (Animata) */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(to right, rgba(10, 36, 99, 0.95) 0%, rgba(10, 36, 99, 0.4) 100%), 
+                        url('tecnometal.jpg') center/cover fixed;
+            display: flex; align-items: center; padding: 0 5%; color: var(--white);
+        }
+        .hero-content { max-width: 750px; animation: slideUp 1s ease-out forwards; opacity: 0; transform: translateY(50px); }
+        .hero h1 { font-size: 5rem; font-weight: 900; line-height: 1.05; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: -2px;}
+        .hero h1 span { color: transparent; -webkit-text-stroke: 2px var(--accent-orange); }
+        .hero p { font-size: 1.25rem; font-weight: 300; margin-bottom: 3rem; line-height: 1.7; color: #d0dbe8; border-left: 3px solid var(--accent-orange); padding-left: 20px;}
+        
+        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
+
+        /* Statistiche (Fascia numerica) */
+        .stats-bar {
+            display: flex; background: var(--white); padding: 3rem 5%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-top: -50px;
+            position: relative; z-index: 10; border-radius: 8px; justify-content: space-around; text-align: center;
+        }
+        .stat-item h3 { font-size: 3.5rem; color: var(--primary-blue); font-weight: 900; line-height: 1; }
+        .stat-item p { font-size: 0.9rem; text-transform: uppercase; font-weight: 600; color: #777; letter-spacing: 1px; margin-top: 10px;}
+
+        /* Servizi */
+        .services-section { padding: 8rem 5% 5rem; }
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-header h2 { font-size: 3rem; color: var(--primary-blue); margin-bottom: 1rem; font-weight: 900;}
+        .section-header p { color: #666; font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+        .service-card {
+            background: var(--white); border: 1px solid var(--border-color);
+            padding: 3rem 2.5rem; border-radius: 8px; position: relative; overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        /* Effetto riempimento hover */
+        .service-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 0;
+            background: var(--primary-blue); transition: height 0.4s; z-index: 0;
+        }
+        .service-card:hover::before { height: 100%; }
+        .service-card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .service-card:hover h3, .service-card:hover p { color: var(--white) !important; position: relative; z-index: 1;}
+
+        .service-icon {
+            width: 70px; height: 70px; background: var(--primary-blue);
+            color: white; font-size: 2.2rem; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; margin: 0 auto 1.5rem; position: relative; z-index: 1;
+            transition: all 0.4s;
+        }
+        .service-card:hover .service-icon {
+            background: var(--white); /* Quando passi il mouse e il riquadro diventa blu, l'icona diventa bianca! */
+        }
+        .service-card h3 { font-size: 1.6rem; margin-bottom: 1rem; color: var(--dark-metal); position: relative; z-index: 1;}
+        .service-card p { color: #666; line-height: 1.6; position: relative; z-index: 1;}
+
+        /* Parco Macchine / Gallery */
+        .machines-section { padding: 6rem 5%; background: var(--dark-metal); color: white; display: flex; gap: 4rem; align-items: center; }
+        .machines-text { flex: 1; }
+        .machines-text h2 { font-size: 3rem; margin-bottom: 1.5rem; }
+        .machines-text p { color: #aaa; line-height: 1.8; margin-bottom: 2rem; font-size: 1.1rem; }
+        
+        .tech-list { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 3rem;}
+        .tech-list li { background: rgba(255,255,255,0.05); padding: 12px 20px; border-radius: 4px; font-family: 'Montserrat', sans-serif; font-weight: 600; border-left: 3px solid var(--accent-orange);}
+        
+        .machines-img { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .img-wrap { overflow: hidden; border-radius: 6px; position: relative;}
+        .img-wrap img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.5s; display: block;}
+        .img-wrap::after {
+            content: 'CNC Mazak Integrex'; position: absolute; bottom: -40px; left: 0; width: 100%;
+            background: rgba(255,94,91,0.9); color: white; padding: 10px; font-weight: bold; text-align: center; transition: bottom 0.3s;
+        }
+        .img-wrap:hover img { transform: scale(1.1); }
+        .img-wrap:hover::after { bottom: 0; }
+        .img-large { grid-column: span 2; height: 350px !important; }
+
+        /* Modale Preventivo (Richiesta Dati) */
+        .modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10,36,99,0.9); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background: var(--white); width: 100%; max-width: 600px; padding: 3rem;
+            border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,0.5); position: relative;
+        }
+        .close-modal { position: absolute; top: 20px; right: 25px; font-size: 2rem; color: #888; cursor: pointer; }
+        .modal-content h2 { color: var(--primary-blue); margin-bottom: 2rem; font-size: 2.2rem; }
+        
+        .form-row { display: flex; gap: 15px; margin-bottom: 15px;}
+        .form-group { flex: 1; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: bold; color: #555; margin-bottom: 5px; text-transform: uppercase;}
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-family: 'Roboto';
+        }
+        .file-upload { border: 2px dashed #ccc; padding: 20px; text-align: center; cursor: pointer; color: #777; background: #fafafa; border-radius: 4px; margin-bottom: 15px;}
+        .file-upload:hover { border-color: var(--accent-orange); color: var(--accent-orange); }
+
+        footer { background: #051230; color: #888; padding: 4rem 5% 2rem; text-align: center; }
+
+        @media (max-width: 900px) {
+            .top-bar { flex-direction: column; gap: 5px; text-align: center; }
+            nav { flex-direction: column; gap: 1rem; padding: 1rem 5%; text-align: center; }
+            .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .hero { height: auto; min-height: 80vh; padding: 6rem 5% 4rem; background-attachment: scroll; }
+            .hero h1 { font-size: clamp(2.2rem, 8vw, 3.2rem); }
+            .hero p { font-size: 1.05rem; }
+            .stats-bar { flex-direction: column; gap: 2rem; margin-top: -20px; }
+            .services-section { padding: 4rem 5% 3rem; }
+            .section-header h2 { font-size: 2.2rem; }
+            .services-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .machines-section { flex-direction: column; padding: 4rem 5%; gap: 2.5rem; }
+            .machines-text h2 { font-size: 2.2rem; }
+            .tech-list { grid-template-columns: 1fr; }
+            .machines-img { grid-template-columns: 1fr; }
+            .img-large { grid-column: span 1; height: 220px !important; }
+            .modal-content { padding: 2rem 1.5rem; width: 95%; max-height: 90vh; overflow-y: auto; }
+            .form-row { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div>Certificazione <span>ISO 9001:2015</span> | Precisione Garantita</div>
+        <div>Ufficio Tecnico: 02.9988.7766 | preventivi@tecnometalcnc.it</div>
+    </div>
+
+    <nav>
+        <div class="logo">TECNO<span>METAL</span></div>
+        <ul class="nav-links">
+            <li><a href="#servizi">Lavorazioni</a></li>
+            <li><a href="#macchinari">Parco Macchine</a></li>
+            <li><a href="#qualita">Qualità</a></li>
+        </ul>
+        <button onclick="apriPreventivo()" class="btn-quote">Carica CAD 3D</button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>LA TUA IDEA.<br><span>LA NOSTRA</span> PRECISIONE.</h1>
+            <p>Leader in Italia nelle lavorazioni meccaniche conto terzi. Dal prototipo singolo alla grande serie, garantiamo tolleranze centesimali su fresatura e tornitura a controllo numerico (CNC).</p>
+            <button onclick="apriPreventivo()" class="btn-quote" style="padding: 16px 45px; font-size: 1.2rem;">Richiedi Preventivo in 24h</button>
+        </div>
+    </header>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <h3>25+</h3>
+            <p>Anni di Esperienza</p>
+        </div>
+        <div class="stat-item">
+            <h3>14</h3>
+            <p>Centri di Lavoro CNC</p>
+        </div>
+        <div class="stat-item">
+            <h3>0.01<span style="font-size: 1.5rem">mm</span></h3>
+            <p>Tolleranza Massima</p>
+        </div>
+        <div class="stat-item">
+            <h3>100%</h3>
+            <p>Collaudo in Sala Metrologica</p>
+        </div>
+    </div>
+
+    <section id="servizi" class="services-section">
+        <div class="section-header">
+            <h2>Capacità Produttiva</h2>
+            <p>Gestiamo l'intero ciclo di vita del componente metallico, dall'analisi ingegneristica fino al trattamento termico o superficiale finale.</p>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Fresatura 5 Assi</h3>
+                <p>Realizzazione di geometrie ultracomplesse (giranti, stampi, componenti aerospaziali) con un solo piazzamento, riducendo i tempi e azzerando gli errori di posizionamento.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>Tornitura da Barra</h3>
+                <p>Torni fantina mobile e bimandrino motorizzati per la produzione di lotti fino a 50.000 pezzi in tempi rapidissimi con finiture superficiali perfette.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔬</div>
+                <h3>Ingegnerizzazione CAD/CAM</h3>
+                <p>Il nostro ufficio tecnico analizza il tuo file 3D per ottimizzare il percorso utensile, suggerendo migliorie per abbassare il costo di produzione del pezzo.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="macchinari" class="machines-section">
+        <div class="machines-text">
+            <h2>Investiamo nella migliore tecnologia mondiale.</h2>
+            <p>Un operatore esperto ha bisogno degli strumenti migliori. Il nostro stabilimento ospita macchinari giapponesi e tedeschi di ultima generazione, costantemente manutenuti.</p>
+            
+            <ul class="tech-list">
+                <li>MAZAK Integrex i-200</li>
+                <li>DMG MORI DMU 50</li>
+                <li>OKUMA Genos L3000</li>
+                <li>DOOSAN Puma 2600</li>
+                <li>Sala Metrologica ZEISS</li>
+                <li>Laser Marcatura TRUMPF</li>
+            </ul>
+        </div>
+        
+        <div class="machines-img">
+            <div class="img-wrap img-large">
+                <img src="tecnometal3.jpg" alt="Officina CNC">
+            </div>
+            <div class="img-wrap">
+                <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Saldatura Metallo">
+            </div>
+            <div class="img-wrap">
+                <img src="tecnometal2.jpg" alt="Fresa CNC Precisione">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modale "Richiedi Preventivo" -->
+    <div id="modalPreventivo" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="chiudiPreventivo()">&times;</span>
+            <h2>Richiesta Preventivo Rapido</h2>
+            <form onsubmit="inviaPreventivo(event)">
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Nome Azienda</label>
+                        <input type="text" required placeholder="Es. Alfa Meccanica Srl">
+                    </div>
+                    <div class="form-group">
+                        <label>Email Commerciale</label>
+                        <input type="email" required placeholder="info@azienda.it">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Tipo di Lavorazione</label>
+                        <select>
+                            <option>Fresatura CNC (3/5 Assi)</option>
+                            <option>Tornitura</option>
+                            <option>Assemblaggio e Collaudo</option>
+                            <option>Altro / Non sicuro</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Volume (Pezzi)</label>
+                        <select>
+                            <option>Prototipo singolo (1-5 pz)</option>
+                            <option>Piccola Serie (10-100 pz)</option>
+                            <option>Grande Serie (+1000 pz)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Materiale Richiesto</label>
+                    <input type="text" placeholder="Es. Alluminio 7075, Acciaio Inox 316L, Titanio...">
+                </div>
+
+                <!-- Area di Upload File Finta -->
+                <div class="file-upload" onclick="alert('In una versione reale, qui si aprirebbe la finestra per selezionare i file .STEP, .IGES o .PDF dal computer!')">
+                    <span style="font-size: 2rem;">📁</span><br>
+                    <strong>Trascina qui il tuo file CAD 3D o PDF</strong><br>
+                    <span style="font-size: 0.85rem;">Accettiamo .STEP, .IGES, .DXF, .PDF (Max 20MB)</span>
+                </div>
+
+                <button type="submit" class="btn-quote" style="width: 100%;">Invia Richiesta al Reparto Tecnico</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="logo" style="color: #444;">TECNO<span style="color: var(--accent-orange);">METAL</span></div>
+        <p style="margin-top: 1rem;">L'eccellenza italiana nella meccanica di precisione.</p>
+    </footer>
+
+    <script>
+        const modal = document.getElementById("modalPreventivo");
+        function apriPreventivo() { modal.style.display = "flex"; }
+        function chiudiPreventivo() { modal.style.display = "none"; }
+        function inviaPreventivo(event) {
+            event.preventDefault();
+            alert("Il file CAD è stato caricato e la richiesta è stata inviata al nostro ufficio tecnico. Riceverai un'offerta entro 24 ore!");
+            chiudiPreventivo();
+        }
+        window.onclick = function(event) {
+            if (event.target == modal) chiudiPreventivo();
+        }
+    </script>
+</body>
+</html>

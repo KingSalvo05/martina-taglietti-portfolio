@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Legale De Santis | Avvocati</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --blue: #1A2942; --gold: #C5A45F; --bg: #F9F9F9; --text: #333; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Lato', sans-serif; color: var(--text); }
+        body { background: var(--bg); }
+        h1, h2, h3, .logo { font-family: 'Playfair Display', serif; }
+        nav { display: flex; justify-content: space-between; padding: 25px 8%; background: #fff; align-items: center; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+        .logo { font-size: 1.8rem; font-weight: 700; color: var(--blue); }
+        .logo span { color: var(--gold); }
+        .nav-links a { margin-left: 30px; text-decoration: none; color: var(--blue); font-weight: 700; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;}
+        .hero { height: 75vh; background: linear-gradient(to right, rgba(26, 41, 66, 0.95), rgba(26, 41, 66, 0.7)), url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover; display: flex; align-items: center; padding: 0 8%; color: white;}
+        .hero-text { max-width: 600px; }
+        .hero h1 { font-size: 3.5rem; color: white; margin-bottom: 20px; line-height: 1.2;}
+        .hero p { font-size: 1.2rem; color: #ddd; margin-bottom: 30px; line-height: 1.6; }
+        .btn { background: var(--gold); color: white; padding: 15px 35px; text-decoration: none; font-weight: 700; letter-spacing: 1px; transition: 0.3s; border-radius: 2px; display: inline-block;}
+        .btn:hover { background: #b08d4a; }
+        .services { padding: 5rem 8%; display: flex; gap: 40px; }
+        .services-text { flex: 1; }
+        .services-text h2 { font-size: 2.5rem; color: var(--blue); margin-bottom: 20px; }
+        .services-text p { line-height: 1.8; color: #666; margin-bottom: 20px;}
+        .grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: white; padding: 30px; border-top: 3px solid var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .card h3 { color: var(--blue); margin-bottom: 10px; font-size: 1.3rem;}
+        .card p { font-size: 0.9rem; color: #777; line-height: 1.5; }
+        footer { background: var(--blue); color: white; padding: 4rem 8%; text-align: center; }
+        footer h2, footer p { color: white; }
+
+        /* Responsive Mobile */
+        @media (max-width: 900px) {
+            nav { flex-direction: column; gap: 1rem; padding: 20px 5%; text-align: center; }
+            .nav-links a { margin: 0 10px; }
+            .hero { height: auto; min-height: 70vh; padding: 5rem 5% 4rem; text-align: center; }
+            .hero-text { max-width: 100%; margin: 0 auto; }
+            .hero h1 { font-size: clamp(2.2rem, 7vw, 3rem); }
+            .hero p { font-size: 1.05rem; }
+            .services { flex-direction: column; padding: 4rem 5%; gap: 2.5rem; }
+            .services-text h2 { font-size: 2.2rem; }
+            .grid { grid-template-columns: 1fr; gap: 15px; }
+            .card { padding: 22px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">DE SANTIS <span>&</span> ASSOCIATI</div>
+        <div class="nav-links">
+            <a href="#">Lo Studio</a>
+            <a href="#">Aree di Pratica</a>
+            <a href="#">Contatti</a>
+        </div>
+    </nav>
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Difendiamo i tuoi diritti con autorevolezza ed esperienza.</h1>
+            <p>Dal 1998 offriamo assistenza legale a privati e aziende con un approccio etico, rigoroso e orientato al risultato.</p>
+            <a href="#" class="btn">Richiedi Consulto</a>
+        </div>
+    </header>
+    <section class="services">
+        <div class="services-text">
+            <h2>Le Nostre Competenze</h2>
+            <p>Il nostro Studio si avvale di professionisti specializzati nei vari rami del diritto, garantendo una copertura legale a 360 gradi per ogni tipo di contenzioso o consulenza preventiva.</p>
+            <a href="#" style="color: var(--gold); font-weight: bold; text-decoration: none;">Scopri tutto il team &rarr;</a>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>Diritto Civile</h3>
+                <p>Risarcimento danni, recupero crediti, contrattualistica e infortunistica.</p>
+            </div>
+            <div class="card">
+                <h3>Diritto Societario</h3>
+                <p>Consulenza aziendale, fusioni, acquisizioni e tutela marchi/brevetti.</p>
+            </div>
+            <div class="card">
+                <h3>Diritto di Famiglia</h3>
+                <p>Separazioni, divorzi, affidamento minori e successioni ereditarie.</p>
+            </div>
+            <div class="card">
+                <h3>Diritto Penale</h3>
+                <p>Assistenza e difesa in procedimenti penali per privati e colletti bianchi.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <h2 style="font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 10px;">Studio Legale De Santis</h2>
+        <p>Foro di Milano - Via della Giustizia, 1</p>
+    </footer>
+</body>
+</html>
